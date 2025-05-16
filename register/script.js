@@ -1,4 +1,4 @@
-// DOM Elements
+
 const loginSection = document.getElementById('login-section');
 const signupSection = document.getElementById('signup-section');
 const showSignupLink = document.getElementById('show-signup');
@@ -11,7 +11,7 @@ const alert = document.getElementById('alert');
 const alertMessage = document.getElementById('alert-message');
 const closeAlert = document.getElementById('close-alert');
 
-// Toggle between login and signup forms
+
 showSignupLink.addEventListener('click', (e) => {
     e.preventDefault();
     loginSection.classList.remove('active');
@@ -24,13 +24,13 @@ showLoginLink.addEventListener('click', (e) => {
     loginSection.classList.add('active');
 });
 
-// Theme toggle functionality
+
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
     localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
 });
 
-// Check for saved theme preference
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Password visibility toggle
+
 togglePasswordBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const input = btn.parentElement.querySelector('input');
@@ -52,7 +52,7 @@ togglePasswordBtns.forEach(btn => {
     });
 });
 
-// Form validation functions
+
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -91,31 +91,31 @@ closeAlert.addEventListener('click', () => {
     alert.classList.remove('show');
 });
 
-// Login form validation
+
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let isValid = true;
     const email = document.getElementById('login-email');
     const password = document.getElementById('login-password');
 
-    // Clear previous errors
+    
     clearError(email);
     clearError(password);
 
-    // Validate email
+    
     if (!validateEmail(email.value)) {
         showError(email, 'Please enter a valid email address');
         isValid = false;
     }
 
-    // Validate password
+    
     if (password.value.trim() === '') {
         showError(password, 'Password cannot be empty');
         isValid = false;
     }
 
     if (isValid) {
-        // Simulate API request with timeout
+        
         setTimeout(() => {
             showAlert('Login successful! Redirecting...', 'success');
             loginForm.reset();
@@ -123,7 +123,7 @@ loginForm.addEventListener('submit', (e) => {
     }
 });
 
-// Signup form validation
+
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let isValid = true;
@@ -132,49 +132,49 @@ signupForm.addEventListener('submit', (e) => {
     const password = document.getElementById('signup-password');
     const confirmPassword = document.getElementById('confirm-password');
 
-    // Clear previous errors
+    
     clearError(fullName);
     clearError(email);
     clearError(password);
     clearError(confirmPassword);
 
-    // Validate name
+    
     if (fullName.value.trim() === '') {
         showError(fullName, 'Full name is required');
         isValid = false;
     }
 
-    // Validate email
+    
     if (!validateEmail(email.value)) {
         showError(email, 'Please enter a valid email address');
         isValid = false;
     }
 
-    // Validate password
+    
     if (!validatePassword(password.value)) {
         showError(password, 'Password must be at least 6 characters long');
         isValid = false;
     }
 
-    // Confirm passwords match
+    
     if (password.value !== confirmPassword.value) {
         showError(confirmPassword, 'Passwords do not match');
         isValid = false;
     }
 
     if (isValid) {
-        // Simulate API request with timeout
+        
         setTimeout(() => {
             showAlert('Account created successfully!', 'success');
             signupForm.reset();
-            // Switch to login after successful signup
+            
             signupSection.classList.remove('active');
             loginSection.classList.add('active');
         }, 1000);
     }
 });
 
-// Input validation on blur
+
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('blur', () => {
         if (input.id === 'login-email' || input.id === 'signup-email') {
@@ -204,7 +204,7 @@ document.querySelectorAll('input').forEach(input => {
     });
 });
 
-// Clear error on input focus
+
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('focus', () => {
         clearError(input);

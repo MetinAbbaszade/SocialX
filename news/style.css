@@ -30,13 +30,13 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Light Mode (default) */
+
 body.light-mode {
     background-color: var(--background-light);
     color: var(--text-light);
 }
 
-/* Dark Mode */
+
 body.dark-mode {
     background-color: var(--background-dark);
     color: var(--text-dark);
@@ -49,7 +49,7 @@ body.dark-mode {
     padding: 0 15px;
 }
 
-/* Header */
+
 header {
     background-color: var(--primary-color);
     color: white;
@@ -71,7 +71,7 @@ header .container {
     font-weight: bold;
 }
 
-/* Theme Toggle */
+
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -133,12 +133,12 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Main Content */
+
 main {
     padding: 30px 0;
 }
 
-/* Post */
+
 .post {
     background-color: var(--card-bg-light);
     border-radius: 12px;
@@ -222,7 +222,7 @@ main {
     object-fit: cover;
 }
 
-/* Reactions Section */
+
 .reactions {
     display: flex;
     justify-content: space-between;
@@ -302,7 +302,7 @@ main {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Comments Section */
+
 .comments-section {
     background-color: var(--card-bg-light);
     border-radius: 12px;
@@ -332,7 +332,7 @@ main {
     color: var(--text-secondary-dark);
 }
 
-/* Comment Form */
+
 #comment-form {
     margin-bottom: 25px;
 }
@@ -392,7 +392,7 @@ textarea {
     background-color: var(--secondary-color);
 }
 
-/* Comments */
+
 .comments-container {
     display: flex;
     flex-direction: column;
@@ -462,7 +462,7 @@ textarea {
     color: var(--accent-color);
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 20px 0;
@@ -476,7 +476,7 @@ footer {
     color: var(--text-secondary-dark);
 }
 
-/* Notification */
+
 .notification {
     position: fixed;
     bottom: 20px;
@@ -498,7 +498,7 @@ footer {
     opacity: 1;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .post-title {
         font-size: 1.8rem;

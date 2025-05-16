@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab Switching Functionality
+    
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons and contents
+            
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
             
-            // Add active class to clicked button
+            
             this.classList.add('active');
             
-            // Show corresponding content
+            
             const tabId = this.getAttribute('data-tab');
             document.getElementById(tabId).classList.add('active');
         });
     });
 
-    // Theme Switching (Light/Dark Mode)
+    
     const themeSwitch = document.querySelector('.theme-switch');
     const moonIcon = document.querySelector('.fa-moon');
     const sunIcon = document.querySelector('.fa-sun');
@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.toggle('dark-mode');
         document.body.classList.toggle('light-mode');
         
-        // Toggle active class on icons
+        
         moonIcon.classList.toggle('active');
         sunIcon.classList.toggle('active');
         
-        // Store theme preference in localStorage
+        
         const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
         localStorage.setItem('theme', currentTheme);
     });
     
-    // Check for stored theme preference
+    
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         if (savedTheme === 'dark') {
@@ -52,19 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Follow/Unfollow Button Functionality
+    
     const profileActionButton = document.querySelector('.profile-action-button');
     profileActionButton.addEventListener('click', function() {
         if (this.textContent === 'Follow') {
             this.textContent = 'Following';
-            this.style.backgroundColor = '#4CAF50'; // Green color for "Following" state
+            this.style.backgroundColor = '#4CAF50'; 
         } else if (this.textContent === 'Following') {
             this.textContent = 'Follow';
-            this.style.backgroundColor = ''; // Reset to default
+            this.style.backgroundColor = ''; 
         }
     });
 
-    // Hover effect for post cards
+    
     const postCards = document.querySelectorAll('.post-card');
     postCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -75,39 +75,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Unfollow buttons
+    
     const unfollowButtons = document.querySelectorAll('.unfollow-button');
     unfollowButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Find the parent follow card
+            
             const followCard = this.closest('.follow-card');
             
-            // Add animation class
+            
             followCard.style.opacity = '0';
             followCard.style.transform = 'translateX(30px)';
             
-            // Remove the element after animation completes
+            
             setTimeout(() => {
                 followCard.remove();
             }, 300);
         });
     });
 
-    // Comment reply buttons
+    
     const replyButtons = document.querySelectorAll('.reply-button');
     replyButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Get parent comment
+            
             const commentCard = this.closest('.comment-card');
             
-            // Check if reply form already exists
+            
             const existingForm = commentCard.querySelector('.reply-form');
             if (existingForm) {
                 existingForm.remove();
                 return;
             }
             
-            // Create reply form
+            
             const replyForm = document.createElement('div');
             replyForm.className = 'reply-form';
             replyForm.innerHTML = `
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="submit-reply">Submit</button>
             `;
             
-            // Style the form
+            
             const textarea = replyForm.querySelector('textarea');
             const submitButton = replyForm.querySelector('.submit-reply');
             
@@ -139,13 +139,13 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.style.cursor = 'pointer';
             submitButton.style.fontWeight = '600';
             
-            // Append form
+            
             commentCard.appendChild(replyForm);
             
-            // Focus textarea
+            
             textarea.focus();
             
-            // Handle submit button
+            
             submitButton.addEventListener('click', function() {
                 if (textarea.value.trim() !== '') {
                     alert('Reply submitted! (In a real app, this would save to a database)');

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize theme from local storage or default to light
+    
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.setAttribute('data-theme', savedTheme);
     
-    // Elements
+    
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const postForm = document.getElementById('post-form');
     const titleInput = document.getElementById('post-title');
@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const successMessage = document.getElementById('success-message');
     const closeSuccessBtn = document.getElementById('close-success');
     
-    // Error message elements
+    
     const titleError = document.getElementById('title-error');
     const linkError = document.getElementById('link-error');
     const categoryError = document.getElementById('category-error');
     
-    // Theme toggle functionality
+    
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = document.body.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', newTheme);
     });
     
-    // Image upload and preview
+    
     imageUpload.addEventListener('change', function() {
         const file = this.files[0];
         
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Remove image functionality
+    
     removeImageBtn.addEventListener('click', function() {
         imageUpload.value = '';
         imagePreviewContainer.style.display = 'none';
         imagePreview.src = '#';
     });
     
-    // Form validation functions
+    
     function validateTitle() {
         if (!titleInput.value.trim()) {
             titleError.textContent = 'Title is required';
@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const linkValue = linkInput.value.trim();
         
         if (linkValue === '') {
-            // Link is optional, so empty is fine
+            
             linkError.textContent = '';
             return true;
         }
         
-        // Simple URL validation
+        
         try {
             new URL(linkValue);
             linkError.textContent = '';
@@ -92,12 +92,12 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
     
-    // Input validation listeners
+    
     titleInput.addEventListener('blur', validateTitle);
     linkInput.addEventListener('blur', validateLink);
     categorySelect.addEventListener('change', validateCategory);
     
-    // Form submission
+    
     postForm.addEventListener('submit', function(event) {
         event.preventDefault();
         
@@ -106,10 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const isCategoryValid = validateCategory();
         
         if (isTitleValid && isLinkValid && isCategoryValid) {
-            // Show success message (in a real app, you would submit to backend)
+            
             successMessage.classList.add('active');
             
-            // For demo purposes, just log the form data
+            
             console.log({
                 title: titleInput.value,
                 link: linkInput.value,
@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close success message
+    
     closeSuccessBtn.addEventListener('click', function() {
         successMessage.classList.remove('active');
-        // Reset form
+        
         postForm.reset();
         imagePreviewContainer.style.display = 'none';
     });

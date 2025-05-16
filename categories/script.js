@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Sample data - in a real app, this would come from a backend
+    
     const posts = [
         {
             id: 1,
@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-    // DOM elements
+    
     const postsContainer = document.getElementById('posts-container');
     const categoryItems = document.querySelectorAll('.category-item');
     const categoryTitle = document.getElementById('category-title');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
-    // Theme toggle functionality
+    
     themeToggleBtn.addEventListener('click', toggleTheme);
 
     function toggleTheme() {
@@ -104,35 +104,35 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Check for saved theme preference
+    
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
         themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
     }
 
-    // Filter posts by category
+    
     categoryItems.forEach(item => {
         item.addEventListener('click', function () {
-            // Update active category
+            
             categoryItems.forEach(cat => cat.classList.remove('active'));
             this.classList.add('active');
 
             const selectedCategory = this.getAttribute('data-category');
             updateCategoryTitle(selectedCategory);
 
-            // Apply animation to container
+            
             postsContainer.style.opacity = '0';
 
             setTimeout(() => {
-                // Filter and display posts
+                
                 displayPosts(selectedCategory);
                 postsContainer.style.opacity = '1';
             }, 300);
         });
     });
 
-    // Update category title text
+    
     function updateCategoryTitle(category) {
         if (category === 'all') {
             categoryTitle.textContent = 'All Topics';
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Display posts based on selected category
+    
     function displayPosts(category) {
         let filteredPosts;
 
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filteredPosts = posts.filter(post => post.category === category);
         }
 
-        // Generate HTML for posts
+        
         if (filteredPosts.length > 0) {
             let postsHTML = '';
 
@@ -178,6 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Initialize with all posts
+    
     displayPosts('all');
 });

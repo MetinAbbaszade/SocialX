@@ -1,10 +1,10 @@
-// DOM Elements
+
 const themeToggle = document.getElementById('theme-toggle');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const body = document.body;
 const postList = document.getElementById('post-list');
 
-// Sample post data for demonstration
+
 const posts = [
     {
         id: 1,
@@ -58,27 +58,27 @@ const posts = [
     }
 ];
 
-// Theme toggle functionality
+
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
 
-    // Save theme preference to localStorage
+    
     const isDarkTheme = body.classList.contains('dark-theme');
     localStorage.setItem('dark-theme', isDarkTheme);
 });
 
-// Check for saved theme preference
+
 if (localStorage.getItem('dark-theme') === 'true') {
     body.classList.add('dark-theme');
 }
 
-// Mobile menu functionality
+
 mobileMenuBtn.addEventListener('click', () => {
     toggleMobileMenu();
 });
 
 function toggleMobileMenu() {
-    // Check if mobile menu exists, create if not
+    
     let mobileMenu = document.querySelector('.mobile-menu');
 
     if (!mobileMenu) {
@@ -101,21 +101,21 @@ function toggleMobileMenu() {
         body.appendChild(mobileMenu);
     }
 
-    // Toggle mobile menu visibility
+    
     mobileMenu.classList.toggle('active');
     body.classList.toggle('mobile-menu-active');
 
-    // Animate hamburger button
+    
     const spans = mobileMenuBtn.querySelectorAll('span');
     spans.forEach(span => span.classList.toggle('active'));
 }
 
-// Function to render posts
+
 function renderPosts() {
-    // Clear existing posts
+    
     postList.innerHTML = '';
 
-    // Generate HTML for each post
+    
     posts.forEach(post => {
         const postElement = document.createElement('article');
         postElement.className = 'post';
@@ -143,49 +143,49 @@ function renderPosts() {
     });
 }
 
-// Category filter functionality
+
 const categoryButtons = document.querySelectorAll('.category-btn');
 categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
+        
         categoryButtons.forEach(btn => btn.classList.remove('active'));
 
-        // Add active class to clicked button
+        
         button.classList.add('active');
 
-        // In a real application, this would filter posts by category
-        // For this demo, we'll just simulate a reload
+        
+        
         const category = button.textContent;
         console.log(`Filtering by category: ${category}`);
 
-        // You could implement actual filtering here
-        // For now, just re-render all posts
+        
+        
         renderPosts();
     });
 });
 
-// Handle upvote/comment actions
+
 document.addEventListener('click', (e) => {
-    // Use event delegation to handle clicks on dynamically created elements
+    
     if (e.target.closest('.post-stats span')) {
         const action = e.target.closest('.post-stats span');
 
-        // Add a simple animation
+        
         action.style.transform = 'scale(1.2)';
         setTimeout(() => {
             action.style.transform = 'scale(1)';
         }, 200);
 
-        // In a real app, this would send data to the server
+        
         console.log('Action clicked:', action.textContent.trim());
     }
 });
 
-// Initialize posts
+
 document.addEventListener('DOMContentLoaded', () => {
     renderPosts();
 
-    // Add smooth scrolling for all anchor links
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -196,24 +196,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Handle scroll effects
+
 let lastScrollPosition = 0;
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    // Add shadow to header on scroll
+    
     if (currentScrollPosition > 10) {
         document.querySelector('.header').style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
     } else {
         document.querySelector('.header').style.boxShadow = '0 2px 10px var(--shadow-color)';
     }
 
-    // Hide/show header on scroll down/up
+    
     if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 300) {
-        // Scrolling down
+        
         document.querySelector('.header').style.transform = 'translateY(-100%)';
     } else {
-        // Scrolling up
+        
         document.querySelector('.header').style.transform = 'translateY(0)';
     }
 

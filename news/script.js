@@ -1,4 +1,4 @@
-// DOM Elements
+
 const themeSwitch = document.getElementById('theme-switch');
 const body = document.body;
 const commentForm = document.getElementById('comment-form');
@@ -12,26 +12,26 @@ const voteCount = document.querySelector('.vote-count');
 const copyLinkBtn = document.querySelector('.copy-link');
 const notification = document.getElementById('notification');
 
-// Initialize state
+
 let darkMode = localStorage.getItem('darkMode') === 'true';
 let votes = parseInt(voteCount.textContent) || 0;
 let userVote = localStorage.getItem('userVote') || 'none';
 let commentCount = document.querySelectorAll('.comment').length;
 
-// Initialize the page
+
 function initPage() {
-    // Set the theme
+    
     setTheme(darkMode);
     themeSwitch.checked = darkMode;
     
-    // Update vote buttons based on stored preference
+    
     updateVoteButtons();
     
-    // Update comment count
+    
     updateCommentCount();
 }
 
-// Theme toggle functionality
+
 themeSwitch.addEventListener('change', () => {
     darkMode = themeSwitch.checked;
     setTheme(darkMode);
@@ -48,12 +48,12 @@ function setTheme(isDark) {
     }
 }
 
-// Comment character counter
+
 commentInput.addEventListener('input', () => {
     const length = commentInput.value.length;
     charCount.textContent = length;
     
-    // Visual feedback for character limit
+    
     if (length > 450) {
         charCount.style.color = '#ff9800';
     } else if (length > 490) {
@@ -63,7 +63,7 @@ commentInput.addEventListener('input', () => {
     }
 });
 
-// Comment submission
+
 commentForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -76,14 +76,14 @@ commentForm.addEventListener('submit', (e) => {
 });
 
 function addComment(text) {
-    // Create new comment element
+    
     const comment = document.createElement('div');
     comment.classList.add('comment');
     
-    // Create username and timestamp (using some placeholder values)
+    
     const now = new Date();
     const timeString = 'just now';
-    const username = 'You'; // In a real app, this would be the logged-in user
+    const username = 'You'; 
     
     comment.innerHTML = `
         <div class="comment-header">
@@ -98,34 +98,34 @@ function addComment(text) {
         </div>
     `;
     
-    // Add to DOM
+    
     commentsContainer.prepend(comment);
     
-    // Update comment count
+    
     commentCount++;
     updateCommentCount();
     
-    // Smooth scroll and add animation
+    
     comment.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Update comment counter
+
 function updateCommentCount() {
     commentCountSpan.textContent = `(${commentCount})`;
 }
 
-// Voting functionality
+
 upvoteBtn.addEventListener('click', () => {
     if (userVote === 'up') {
-        // Remove upvote
+        
         userVote = 'none';
         votes--;
     } else if (userVote === 'down') {
-        // Change downvote to upvote
+        
         userVote = 'up';
         votes += 2;
     } else {
-        // Add upvote
+        
         userVote = 'up';
         votes++;
     }
@@ -135,15 +135,15 @@ upvoteBtn.addEventListener('click', () => {
 
 downvoteBtn.addEventListener('click', () => {
     if (userVote === 'down') {
-        // Remove downvote
+        
         userVote = 'none';
         votes++;
     } else if (userVote === 'up') {
-        // Change upvote to downvote
+        
         userVote = 'down';
         votes -= 2;
     } else {
-        // Add downvote
+        
         userVote = 'down';
         votes--;
     }
@@ -158,11 +158,11 @@ function updateVotes() {
 }
 
 function updateVoteButtons() {
-    // Reset classes
+    
     upvoteBtn.classList.remove('active');
     downvoteBtn.classList.remove('active');
     
-    // Add active class based on user's vote
+    
     if (userVote === 'up') {
         upvoteBtn.classList.add('active');
     } else if (userVote === 'down') {
@@ -170,7 +170,7 @@ function updateVoteButtons() {
     }
 }
 
-// Copy link functionality
+
 copyLinkBtn.addEventListener('click', () => {
     const url = window.location.href;
     navigator.clipboard.writeText(url).then(() => {
@@ -178,7 +178,7 @@ copyLinkBtn.addEventListener('click', () => {
     });
 });
 
-// Share buttons functionality
+
 document.querySelector('.share-twitter').addEventListener('click', () => {
     const url = window.location.href;
     const title = document.querySelector('.post-title').textContent;
@@ -190,7 +190,7 @@ document.querySelector('.share-facebook').addEventListener('click', () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
 });
 
-// Notification functionality
+
 function showNotification(message) {
     const notificationText = notification.querySelector('p');
     notificationText.textContent = message;
@@ -202,14 +202,14 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Reply button functionality (just a stub for now)
+
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('reply-btn') || e.target.parentElement.classList.contains('reply-btn')) {
-        // In a real app, this would open a reply form
-        // For now, let's focus on the comment input
+        
+        
         commentInput.focus();
     }
 });
 
-// Initialize the page
+
 initPage();

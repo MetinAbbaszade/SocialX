@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
+    
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const body = document.body;
     
@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Apply saved theme
+    
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
     }
     
-    // Form validation and submission
+    
     const contactForm = document.getElementById('contact-form');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
@@ -43,18 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateForm() {
         let isValid = true;
         
-        // Reset error messages
+        
         nameError.textContent = '';
         emailError.textContent = '';
         messageError.textContent = '';
         
-        // Validate name
+        
         if (nameInput.value.trim() === '') {
             nameError.textContent = 'Name is required';
             isValid = false;
         }
         
-        // Validate email
+        
         if (emailInput.value.trim() === '') {
             emailError.textContent = 'Email is required';
             isValid = false;
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
         
-        // Validate message
+        
         if (messageInput.value.trim() === '') {
             messageError.textContent = 'Message is required';
             isValid = false;
@@ -76,29 +76,29 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         if (validateForm()) {
-            // Simulate form submission
+            
             setTimeout(() => {
                 modal.style.display = 'flex';
                 
-                // Reset form
+                
                 contactForm.reset();
             }, 800);
         }
     });
     
-    // Close modal
+    
     closeModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
     
-    // Close modal when clicking outside
+    
     window.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
     });
     
-    // Real-time validation
+    
     nameInput.addEventListener('blur', function() {
         if (nameInput.value.trim() === '') {
             nameError.textContent = 'Name is required';

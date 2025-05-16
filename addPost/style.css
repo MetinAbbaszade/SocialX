@@ -1,5 +1,5 @@
 :root {
-    /* Light theme colors */
+    
     --bg-primary: #ffffff;
     --bg-secondary: #f9f9f9;
     --text-primary: #333333;
@@ -11,14 +11,14 @@
     --success-color: #43a047;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-    /* Form elements */
+    
     --input-bg: #ffffff;
     --input-border: #cccccc;
     --input-focus: #4361ee;
     --input-text: #333333;
     --input-placeholder: #999999;
 
-    /* Transition duration */
+    
     --transition: 0.3s ease;
 }
 
@@ -32,7 +32,7 @@
     --border-color: #333333;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
-    /* Form elements */
+    
     --input-bg: #2d2d2d;
     --input-border: #444444;
     --input-focus: #738aec;
@@ -174,7 +174,7 @@ select:focus {
     height: 20px;
 }
 
-/* Custom file upload */
+
 .file-upload-container {
     position: relative;
 }
@@ -209,7 +209,7 @@ input[type="file"] {
     margin-right: 8px;
 }
 
-/* Image preview */
+
 .image-preview-container {
     margin-top: 15px;
     position: relative;
@@ -246,7 +246,7 @@ input[type="file"] {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Submit button */
+
 .submit-btn {
     background-color: var(--accent-color);
     color: #ffffff;
@@ -269,7 +269,7 @@ input[type="file"] {
     transform: translateY(0);
 }
 
-/* Success message */
+
 .success-message {
     position: fixed;
     top: 0;
@@ -337,7 +337,7 @@ input[type="file"] {
     background-color: var(--accent-hover);
 }
 
-/* Responsive styles */
+
 @media (max-width: 600px) {
     .form-container {
         padding: 20px;

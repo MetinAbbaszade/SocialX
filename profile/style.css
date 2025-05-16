@@ -57,7 +57,7 @@ button {
     transition: var(--transition);
 }
 
-/* Header Styles */
+
 .site-header {
     background-color: var(--bg-primary);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -113,7 +113,7 @@ button {
     color: var(--primary-color);
 }
 
-/* Profile Header Styles */
+
 .profile-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -207,7 +207,7 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Tabs Styles */
+
 .profile-content {
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
@@ -267,7 +267,7 @@ button {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Post Card Styles */
+
 .post-card {
     background-color: var(--bg-primary);
     border-radius: var(--border-radius);
@@ -303,7 +303,7 @@ button {
     line-height: 1.6;
 }
 
-/* Comment Card Styles */
+
 .comment-card {
     background-color: var(--bg-primary);
     border-radius: var(--border-radius);
@@ -364,7 +364,7 @@ button {
     text-decoration: underline;
 }
 
-/* Following List Styles */
+
 .following-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -423,7 +423,7 @@ button {
     border-color: var(--accent-color);
 }
 
-/* Footer Styles */
+
 .site-footer {
     margin-top: 3rem;
     padding: 2rem;
@@ -454,7 +454,7 @@ button {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
+
 @media (max-width: 992px) {
     .profile-info {
         grid-template-columns: 1fr;
