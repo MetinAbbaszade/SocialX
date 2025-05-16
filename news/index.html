@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialX - Post View</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="container">
+            <h1 class="logo">SocialX</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="post">
+            <div class="post-header">
+                <h1 class="post-title">The Future of Renewable Energy Technologies</h1>
+                <a href="#" class="external-link">
+                    <i class="fas fa-external-link-alt"></i> Original Article
+                </a>
+                <div class="post-meta">Posted by <span class="username">EnergyExpert</span> • <span class="timestamp">2 hours ago</span></div>
+            </div>
+
+            <div class="post-content">
+                <p>Recent advancements in renewable energy technologies are paving the way for a more sustainable future. Research institutions around the globe are developing innovative solutions to address climate change and reduce our dependence on fossil fuels.</p>
+                
+                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy" class="featured-image">
+                
+                <p>Solar panel efficiency has improved dramatically in the past decade, with new materials allowing for better energy capture even in low-light conditions. Meanwhile, wind turbine designs have evolved to capture energy from even gentle breezes, expanding their viability in more geographic regions.</p>
+                
+                <p>Battery storage technology, crucial for managing the intermittent nature of renewable sources, has seen breakthroughs in capacity and longevity. This development is particularly important for the widespread adoption of electric vehicles and grid-scale energy storage.</p>
+                
+                <p>What renewable energy innovations are you most excited about? Join the discussion below!</p>
+            </div>
+
+            <div class="reactions">
+                <div class="votes">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">243</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="share-btns">
+                    <button class="share-btn copy-link"><i class="fas fa-link"></i> Copy Link</button>
+                    <button class="share-btn share-twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                    <button class="share-btn share-facebook"><i class="fab fa-facebook"></i> Facebook</button>
+                </div>
+            </div>
+        </article>
+
+        <section class="comments-section">
+            <h2>Comments <span class="comment-count">(12)</span></h2>
+            
+            <form id="comment-form">
+                <div class="form-group">
+                    <textarea id="comment-input" placeholder="Add to the discussion..." maxlength="500"></textarea>
+                    <div class="textarea-footer">
+                        <span class="character-counter"><span id="char-count">0</span>/500</span>
+                        <button type="submit">Comment</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="comments-container">
+                <!-- Comments will be populated here -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <span class="username">SolarFan</span>
+                        <span class="timestamp">1 hour ago</span>
+                    </div>
+                    <div class="comment-body">
+                        <p>I'm particularly excited about the new perovskite solar cells. They promise to be cheaper and more efficient than traditional silicon panels!</p>
+                    </div>
+                    <div class="comment-actions">
+                        <button class="reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <span class="username">GreenTech</span>
+                        <span class="timestamp">45 minutes ago</span>
+                    </div>
+                    <div class="comment-body">
+                        <p>Battery storage is the key. Without proper energy storage solutions, we can't fully utilize the potential of renewable sources.</p>
+                    </div>
+                    <div class="comment-actions">
+                        <button class="reply-btn"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SocialX - Community News Platform</p>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification">
+        <p>Link copied to clipboard!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
