@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialX - Topics & Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="light-mode">
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>SocialX</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <nav>
+                <ul class="categories">
+                    <li class="category-item active" data-category="all">All Topics</li>
+                    <li class="category-item" data-category="it-news">IT News</li>
+                    <li class="category-item" data-category="local-news">Local News</li>
+                    <li class="category-item" data-category="memes">Memes</li>
+                    <li class="category-item" data-category="qa">Q&A</li>
+                    <li class="category-item" data-category="science">Science</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <h2 id="category-title">All Topics</h2>
+            <div class="posts-container" id="posts-container">
+                <!-- Posts will be loaded here via JavaScript -->
+                <div class="loading">Loading posts...</div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SocialX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
