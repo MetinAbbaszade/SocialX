@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact | SocialX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SocialX</div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">
+                        <span class="light-icon">☀️</span>
+                        <span class="dark-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-section" id="about">
+            <h1>About Us</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to SocialX, a community-driven platform where ideas flourish and conversations matter. 
+                        We're dedicated to creating a space where diverse perspectives come together, allowing users to 
+                        discover, share, and discuss the content that matters most to them.
+                    </p>
+                    <p>
+                        What sets us apart is our focus on meaningful engagement. Unlike traditional social media, 
+                        our platform emphasizes quality discussions, fact-based sharing, and building genuine 
+                        connections between people who share common interests. We believe in the power of community 
+                        to elevate conversations beyond the algorithm.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="illustration">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#4A90E2" d="M45,-65.3C58.2,-56.7,68.6,-44,74.3,-29.5C80,-15.1,80.9,1.1,76.8,16.2C72.7,31.2,63.6,45.1,51.4,54.7C39.1,64.2,23.8,69.4,8.4,71.6C-7,73.8,-22.4,72.9,-36.1,66.7C-49.8,60.4,-61.8,48.8,-69.2,34.7C-76.6,20.7,-79.6,4.1,-76.3,-11.3C-73,-26.7,-63.5,-40.9,-51.1,-49.7C-38.7,-58.5,-23.3,-61.9,-7.9,-62.5C7.6,-63,23.1,-60.8,36.5,-60.4C37.9,-60.3,38,-60.1,40.7,-62C43.5,-63.9,45,-65.3,45,-65.3Z" transform="translate(100 100)" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h1>Contact Us</h1>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name">
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address">
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message"></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+        
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your message has been sent successfully. We'll get back to you soon.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SocialX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
