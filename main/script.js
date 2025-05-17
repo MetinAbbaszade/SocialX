@@ -8,53 +8,91 @@ const postList = document.getElementById('post-list');
 const posts = [
     {
         id: 1,
-        title: "Understanding JavaScript Promises for Better Asynchronous Code",
-        category: "Technology",
+        title: "The Future of Quantum Computing",
+        category: "it-news",
+        categoryName: "IT News",
         timeAgo: "3 hours ago",
-        summary: "Learn how to use Promises effectively to handle asynchronous operations and improve your JavaScript code quality.",
-        image: "https://via.placeholder.com/600x400",
-        upvotes: 850,
-        comments: 125
+        snippet: "Recent breakthroughs in quantum computing suggest we're closer than ever to practical applications...",
+        comments: 42,
+        upvotes: 156,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         id: 2,
-        title: "10 Essential Tips for Remote Work Productivity",
-        category: "Lifestyle",
+        title: "City Council Approves New Park Development",
+        category: "local-news",
+        categoryName: "Local News",
         timeAgo: "5 hours ago",
-        summary: "Working from home can be challenging. Here are proven strategies to boost your productivity and maintain work-life balance.",
-        image: "https://via.placeholder.com/600x400",
-        upvotes: 632,
-        comments: 87
+        snippet: "The city council has approved a $2.5 million budget for a new community park in downtown...",
+        comments: 18,
+        upvotes: 87,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         id: 3,
-        title: "Climate Change: New Research Shows Accelerated Impact",
-        category: "Science",
-        timeAgo: "7 hours ago",
-        summary: "Recent studies reveal the effects of climate change are happening faster than previously predicted. Here's what you need to know.",
-        image: "https://via.placeholder.com/600x400",
-        upvotes: 1205,
-        comments: 342
+        title: "When the Code Doesn't Work",
+        category: "memes",
+        categoryName: "Memes",
+        timeAgo: "2 hours ago",
+        snippet: "Every developer knows that feeling when your code suddenly works without knowing why...",
+        comments: 103,
+        upvotes: 420,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         id: 4,
-        title: "The Rise of Indie Game Development",
-        category: "Entertainment",
-        timeAgo: "9 hours ago",
-        summary: "How independent game studios are creating innovative experiences and challenging the mainstream gaming industry.",
-        image: "https://via.placeholder.com/600x400",
-        upvotes: 480,
-        comments: 64
+        title: "How to Optimize Database Queries?",
+        category: "qa",
+        categoryName: "Q&A",
+        timeAgo: "1 hours ago",
+        snippet: "What are the best practices for optimizing database queries in a large-scale application?",
+        comments: 34,
+        upvotes: 67,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         id: 5,
-        title: "Global Markets React to New Economic Policies",
-        category: "Politics",
+        title: "NASA Discovers New Exoplanet",
+        category: "science",
+        categoryName: "Science",
+        snippet: "NASA's James Webb telescope has discovered a potentially habitable exoplanet in a nearby star system...",
+        timeAgo: "10 hours ago",
+        comments: 56,
+        upvotes: 213,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        id: 6,
+        title: "New JavaScript Framework Released",
+        category: "it-news",
+        categoryName: "IT News",
+        snippet: "A new lightweight JavaScript framework promises to be faster and more efficient than existing options...",
+        comments: 29,
+        upvotes: 98,
+        timeAgo: "13 hours ago",
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        id: 7,
+        title: "Local Business Owner Wins Entrepreneur Award",
+        category: "local-news",
+        categoryName: "Local News",
+        snippet: "Jane Smith, owner of Smith's Bakery, has been recognized with this year's community entrepreneur award...",
+        timeAgo: "13 hours ago",
+        comments: 12,
+        upvotes: 45,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        id: 8,
+        title: "Explaining Code to Non-Technical People",
+        category: "memes",
+        categoryName: "Memes",
         timeAgo: "12 hours ago",
-        summary: "Markets worldwide show varied responses to the latest economic policy changes. Experts weigh in on potential long-term impacts.",
-        image: "https://via.placeholder.com/600x400",
-        upvotes: 325,
-        comments: 92
+        snippet: "When you try to explain your code to someone who doesn't understand programming...",
+        comments: 87,
+        upvotes: 342,
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ];
 
@@ -62,7 +100,7 @@ const posts = [
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
 
-    
+
     const isDarkTheme = body.classList.contains('dark-theme');
     localStorage.setItem('dark-theme', isDarkTheme);
 });
@@ -78,7 +116,7 @@ mobileMenuBtn.addEventListener('click', () => {
 });
 
 function toggleMobileMenu() {
-    
+
     let mobileMenu = document.querySelector('.mobile-menu');
 
     if (!mobileMenu) {
@@ -101,25 +139,25 @@ function toggleMobileMenu() {
         body.appendChild(mobileMenu);
     }
 
-    
+
     mobileMenu.classList.toggle('active');
     body.classList.toggle('mobile-menu-active');
 
-    
+
     const spans = mobileMenuBtn.querySelectorAll('span');
     spans.forEach(span => span.classList.toggle('active'));
 }
 
 
 function renderPosts() {
-    
+
     postList.innerHTML = '';
 
-    
+
     posts.forEach(post => {
         const postElement = document.createElement('article');
         postElement.className = 'post';
-
+        postElement.onclick = () => window.location.href = `../news/index.html?id=${post.id}`
         postElement.innerHTML = `
             <div class="post-thumbnail">
                 <img src="${post.image}" alt="${post.title}">
@@ -147,36 +185,36 @@ function renderPosts() {
 const categoryButtons = document.querySelectorAll('.category-btn');
 categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
-        
+
         categoryButtons.forEach(btn => btn.classList.remove('active'));
 
-        
+
         button.classList.add('active');
 
-        
-        
+
+
         const category = button.textContent;
         console.log(`Filtering by category: ${category}`);
 
-        
-        
+
+
         renderPosts();
     });
 });
 
 
 document.addEventListener('click', (e) => {
-    
+
     if (e.target.closest('.post-stats span')) {
         const action = e.target.closest('.post-stats span');
 
-        
+
         action.style.transform = 'scale(1.2)';
         setTimeout(() => {
             action.style.transform = 'scale(1)';
         }, 200);
 
-        
+
         console.log('Action clicked:', action.textContent.trim());
     }
 });
@@ -185,7 +223,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     renderPosts();
 
-    
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -201,19 +239,19 @@ let lastScrollPosition = 0;
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    
+
     if (currentScrollPosition > 10) {
         document.querySelector('.header').style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
     } else {
         document.querySelector('.header').style.boxShadow = '0 2px 10px var(--shadow-color)';
     }
 
-    
+
     if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 300) {
-        
+
         document.querySelector('.header').style.transform = 'translateY(-100%)';
     } else {
-        
+
         document.querySelector('.header').style.transform = 'translateY(0)';
     }
 
